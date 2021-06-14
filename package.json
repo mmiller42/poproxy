@@ -1,0 +1,33 @@
+{
+  "name": "poproxy",
+  "version": "0.0.0",
+  "description": "Proxy factory for preserving insertion order of object keys",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "repository": "https://github.com/mmiller42/poproxy.git",
+  "author": "Matt Miller <me@mmiller.me>",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^3.15.0",
+    "prettier": "^2.3.1",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.2"
+  },
+  "scripts": {
+    "build": "rm -rf dist && mkdir dist && tsc --module CommonJS --outDir dist/cjs && tsc --module ESNext --outDir dist/esm",
+    "format": "prettier --write \"src/**/*.ts\" \"*.json\" \"*.md\"",
+    "test": "ava \"src/**/*.spec.ts\""
+  },
+  "ava": {
+    "extensions": {
+      "ts": "module"
+    },
+    "nonSemVerExperiments": {
+      "configurableModuleFormat": true
+    },
+    "nodeArguments": [
+      "--no-warnings",
+      "--loader=ts-node/esm"
+    ]
+  }
+}
