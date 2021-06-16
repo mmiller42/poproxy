@@ -1,6 +1,6 @@
 {
   "name": "poproxy",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Proxy factory for preserving insertion order of object keys",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
