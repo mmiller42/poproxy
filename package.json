@@ -5,6 +5,7 @@
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "repository": "https://github.com/mmiller42/poproxy.git",
+  "homepage": "https://github.com/mmiller42/poproxy",
   "author": "Matt Miller <me@mmiller.me>",
   "license": "MIT",
   "devDependencies": {
@@ -16,7 +17,8 @@
   "scripts": {
     "build": "rm -rf dist && mkdir dist && tsc --module CommonJS --outDir dist/cjs && tsc --module ESNext --outDir dist/esm",
     "format": "prettier --write \"src/**/*.ts\" \"*.json\" \"*.md\"",
-    "test": "ava \"src/**/*.spec.ts\""
+    "test": "ava \"src/**/*.spec.ts\"",
+    "preversion": "yarn format && yarn build && yarn test"
   },
   "ava": {
     "extensions": {
